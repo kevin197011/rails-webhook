@@ -9,6 +9,7 @@ require_relative 'config/application'
 Rails.application.load_tasks
 
 task :push do
+  system 'rubocop -A'
   system 'git add .'
   system "git commit -m 'Update #{Time.now}.'"
   system 'git pull'

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-class TelegramService
-  require 'uri'
-  require 'net/http'
-  require 'json'
+require 'uri'
+require 'net/http'
+require 'json'
 
+class TelegramService
   def initialize(token)
     @token = token
   end
