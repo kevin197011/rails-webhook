@@ -2,6 +2,11 @@
 
 class AlertWebhookController < ApplicationController
   # skip_before_action :verify_authenticity_token
+
+  def def(_index)
+    render plain: 'Welcome to Rails-Webhook!'
+  end
+
   def send
     telegram_bot_token = ENV['TELEGRAM_BOT_TOKEN']
     chat_id = params[:chat_id] || ENV['TELEGRAM_CHAT_ID']

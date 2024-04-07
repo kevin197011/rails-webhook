@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'alert_webhook/send'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # config/routes.rb
   post '/alert_webhook', to: 'alert_webhook#send'
@@ -11,5 +10,5 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root 'alert_webhook#index'
 end
