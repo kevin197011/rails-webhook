@@ -3,7 +3,7 @@
 class AlertWebhookController < ApplicationController
   # skip_before_action :verify_authenticity_token
 
-  def def(_index)
+  def index
     render plain: 'Welcome to Rails-Webhook!'
   end
 
