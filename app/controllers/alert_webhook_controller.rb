@@ -17,7 +17,5 @@ class AlertWebhookController < ApplicationController
 
       AlertWorker.perform_async(telegram_bot_token, chat_id, message)
     end
-
-    head :ok
   end
 end
