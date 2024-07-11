@@ -6,4 +6,13 @@ services:
     volumes:
       - .:/app
     environment:
-      - RAILS_ENV=developmentroot
+      - RAILS_ENV=development
+      - REDIS_URL=redis://redis:6379/0
+      - secret_key_base=7cccf3bb69f1cc618da0ce519e8b2a4a0e95d90229de613253b4c42e88eabed7719d6dbeffb88d4dfe39eb44debcdd8f40ac2df84c6a6f3d235642eb0e37db39
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7.0
+    ports:
+      - "6379:6379"

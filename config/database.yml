@@ -12,6 +12,8 @@ default: &default
 development:
   <<: *default
   database: storage/development.sqlite3
+  secret_key_base: 7cccf3bb69f1cc618da0ce519e8b2a4a0e95d90229de613253b4c42e88eabed7719d6dbeffb88d4dfe39eb44debcdd8f40ac2df84c6a6f3d235642eb0e37db39
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
