@@ -8,10 +8,10 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-task :push do
+task push: :environment do
   system 'rubocop -A'
   system 'git add .'
-  system "git commit -m 'Update #{Time.now}.'"
+  system "git commit -m 'Update #{Time.zone.now}.'"
   system 'git pull'
   system 'git push origin main'
 end
