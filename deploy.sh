@@ -6,3 +6,4 @@
 # https://opensource.org/licenses/MIT
 
 docker compose up --force-recreate --no-deps --build --remove-orphans -d
+docker compose logs -f

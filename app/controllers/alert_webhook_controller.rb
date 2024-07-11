@@ -12,9 +12,12 @@ class AlertWebhookController < ApplicationController
     chat_id = params[:chat_id] || ENV['TELEGRAM_CHAT_ID']
     alert_params = JSON.parse(request.body.read)
 
+    # Rails.logger.info("token: #{telegram_bot_token}")
+    # Rails.logger.info("chat_id: #{chat_id}")
+
     alert_params['alerts'].each do |alert|
       message = alert['annotations']['message']
-
+      # Rails.logger.info("message: #{message}")
       AlertWorker.perform_async(telegram_bot_token, chat_id, message)
     end
   end

@@ -5,6 +5,8 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
+    env_file:
+      - .env
     environment:
       - RAILS_ENV=development
       - REDIS_URL=redis://redis:6379/0
