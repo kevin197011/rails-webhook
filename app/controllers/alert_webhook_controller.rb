@@ -18,7 +18,8 @@ class AlertWebhookController < ApplicationController
     alert_params['alerts'].each do |alert|
       message = alert['annotations']['message']
       # Rails.logger.info("message: #{message}")
-      AlertWorker.perform_async(telegram_bot_token, chat_id, message)
+      # AlertWorker.perform_async(telegram_bot_token, chat_id, message)
+      SendAlertJob.perform_later(telegram_bot_token, chat_id, message)
     end
   end
 end

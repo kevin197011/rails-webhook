@@ -13,6 +13,9 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # docker disable log file
+  config.logger = ActiveSupport::Logger.new($stdout)
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
